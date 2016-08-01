@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :weeks, except: [:new, :edit]
+  resources :schedules, except: [:new, :edit]
+  resources :favorites, except: [:new, :edit]
   resources :cultures, except: [:new, :edit]
   resources :recipes, except: [:new, :edit]
   resources :profiles, except: [:new, :edit]
