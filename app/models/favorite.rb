@@ -1,3 +1,3 @@
 class Favorite < ActiveRecord::Base
-  belongs_to :profile, foreign_key: :profile_id, inverse_of: :favorites
+  belongs_to :profile, foreign_key: :profile_id, inverse_of: :favorites, dependent: :destroy
 end
