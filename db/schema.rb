@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160801001604) do
+ActiveRecord::Schema.define(version: 20160801023601) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,7 +52,11 @@ ActiveRecord::Schema.define(version: 20160801001604) do
   create_table "schedules", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date     "eat_on"
+    t.integer  "recipe_id"
   end
+
+  add_index "schedules", ["recipe_id"], name: "index_schedules_on_recipe_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",           null: false
@@ -68,4 +72,5 @@ ActiveRecord::Schema.define(version: 20160801001604) do
   add_foreign_key "examples", "users"
   add_foreign_key "favorites", "profiles"
   add_foreign_key "favorites", "recipes"
+  add_foreign_key "schedules", "recipes"
 end
