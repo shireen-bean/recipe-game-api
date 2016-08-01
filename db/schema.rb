@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160801023951) do
+ActiveRecord::Schema.define(version: 20160801123041) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "completions", force: :cascade do |t|
+    t.integer  "profile_id"
+    t.integer  "recipe_id"
+    t.string   "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "completions", ["profile_id"], name: "index_completions_on_profile_id", using: :btree
+  add_index "completions", ["recipe_id"], name: "index_completions_on_recipe_id", using: :btree
 
   create_table "examples", force: :cascade do |t|
     t.text     "text",       null: false
@@ -42,6 +53,17 @@ ActiveRecord::Schema.define(version: 20160801023951) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "ratings", force: :cascade do |t|
+    t.integer  "score"
+    t.integer  "recipe_id"
+    t.integer  "profile_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "ratings", ["profile_id"], name: "index_ratings_on_profile_id", using: :btree
+  add_index "ratings", ["recipe_id"], name: "index_ratings_on_recipe_id", using: :btree
+
   create_table "recipes", force: :cascade do |t|
     t.string   "directions"
     t.integer  "time"
@@ -55,9 +77,20 @@ ActiveRecord::Schema.define(version: 20160801023951) do
     t.datetime "updated_at", null: false
     t.date     "eat_on"
     t.integer  "recipe_id"
+    t.integer  "profile_id"
   end
 
+  add_index "schedules", ["profile_id"], name: "index_schedules_on_profile_id", using: :btree
   add_index "schedules", ["recipe_id"], name: "index_schedules_on_recipe_id", using: :btree
+
+  create_table "tags", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "recipe_id"
+    t.string   "tag"
+  end
+
+  add_index "tags", ["recipe_id"], name: "index_tags_on_recipe_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",           null: false
@@ -70,8 +103,14 @@ ActiveRecord::Schema.define(version: 20160801023951) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["token"], name: "index_users_on_token", unique: true, using: :btree
 
+  add_foreign_key "completions", "profiles"
+  add_foreign_key "completions", "recipes"
   add_foreign_key "examples", "users"
   add_foreign_key "favorites", "profiles"
   add_foreign_key "favorites", "recipes"
+  add_foreign_key "ratings", "profiles"
+  add_foreign_key "ratings", "recipes"
+  add_foreign_key "schedules", "profiles"
   add_foreign_key "schedules", "recipes"
+  add_foreign_key "tags", "recipes"
 end

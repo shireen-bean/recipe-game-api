@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :ratings, except: [:new, :edit]
+  resources :completions, except: [:new, :edit]
+  resources :tags, except: [:new, :edit]
   resources :schedules, except: [:new, :edit]
   resources :favorites, except: [:new, :edit]
   resources :cultures, except: [:new, :edit]
