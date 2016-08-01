@@ -54,6 +54,6 @@ class SchedulesController < ApplicationController
     end
 
     def schedule_params
-      params[:schedule]
+      params.require(:schedule).permit(:profile_id, :recipe_id, :eat_on)
     end
 end

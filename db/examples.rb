@@ -16,8 +16,8 @@
 #                password: 'abc123',
 #                password_confirmation: nil)
 # end
-Recipe.transaction do
-  CSV.foreach 'data/recipes.csv', headers: true do |shirt|
-    Shirt.create(shirt.to_hash)
-  end
-end
+# Recipe.transaction do
+#   CSV.foreach 'data/recipes.csv', headers: true do |shirt|
+#     Recipe.create(shirt.to_hash)
+#   end
+# end
