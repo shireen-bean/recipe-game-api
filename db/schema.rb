@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160801123041) do
+ActiveRecord::Schema.define(version: 20160801125309) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,7 +51,10 @@ ActiveRecord::Schema.define(version: 20160801123041) do
     t.integer  "level"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
+
+  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
 
   create_table "ratings", force: :cascade do |t|
     t.integer  "score"
@@ -108,6 +111,7 @@ ActiveRecord::Schema.define(version: 20160801123041) do
   add_foreign_key "examples", "users"
   add_foreign_key "favorites", "profiles"
   add_foreign_key "favorites", "recipes"
+  add_foreign_key "profiles", "users"
   add_foreign_key "ratings", "profiles"
   add_foreign_key "ratings", "recipes"
   add_foreign_key "schedules", "profiles"

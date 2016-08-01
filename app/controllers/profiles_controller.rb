@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :update, :destroy]
+  before_action :authenticate, only: [:create, :update]
 
   # GET /profiles
   # GET /profiles.json
@@ -54,6 +55,6 @@ class ProfilesController < ApplicationController
     end
 
     def profile_params
-      params.require(:profile).permit(:given_name, :level)
+      params.require(:profile).permit(:given_name, :level, :user_id)
     end
 end
