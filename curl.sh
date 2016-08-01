@@ -51,7 +51,25 @@ curl --include --request POST http://localhost:3000/schedules \
     }
 }'
 
+curl --include --request POST http://localhost:3000/tags \
+  --header "Content-Type: application/json" \
+  --header "Authorization: Token token=BAhJIiVhYzViNDBiY2EzZjljYzk4MGZjM2EzOTI4MTFmY2RhZQY6BkVG--dead3c009c202c1aedc4a9cad40b685e6ecdbf54" \
+  --data '{
+    "tag": {
+      "recipe_id": 1,
+      "tag": "American"
+    }
+}'
 
+curl --include --request POST http://localhost:3000/ratings \
+  --header "Content-Type: application/json" \
+  --header "Authorization: Token token=BAhJIiVhYzViNDBiY2EzZjljYzk4MGZjM2EzOTI4MTFmY2RhZQY6BkVG--dead3c009c202c1aedc4a9cad40b685e6ecdbf54" \
+  --data '{
+    "rating": {
+      "recipe_id": 1,
+      "score": 1
+    }
+}'
 
 
 
