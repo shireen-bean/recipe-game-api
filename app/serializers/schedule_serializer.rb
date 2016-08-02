@@ -1,5 +1,5 @@
 class ScheduleSerializer < ActiveModel::Serializer
-  attributes :id, :eat_on, :profile_id, :recipe_id, :recipe, :profile
+  attributes :id, :eat_on, :recipe, :profile, :favorite, :complete, :rating
 
   def recipe
     object.recipe.id

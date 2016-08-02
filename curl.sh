@@ -57,8 +57,10 @@ curl --include --request POST http://localhost:3000/schedules \
   --data '{
     "schedule": {
       "profile_id": 1,
-      "recipe_id": 2,
-      "eat_on": "2016-08-01"
+      "recipe_id": 3,
+      "eat_on": "2016-08-02",
+      "complete": false,
+      "favorite": false
     }
 }'
 
@@ -69,16 +71,6 @@ curl --include --request POST http://localhost:3000/tags \
     "tag": {
       "recipe_id": 1,
       "tag": "American"
-    }
-}'
-
-curl --include --request POST http://localhost:3000/ratings \
-  --header "Content-Type: application/json" \
-  --header "Authorization: Token token=BAhJIiVhYzViNDBiY2EzZjljYzk4MGZjM2EzOTI4MTFmY2RhZQY6BkVG--dead3c009c202c1aedc4a9cad40b685e6ecdbf54" \
-  --data '{
-    "rating": {
-      "recipe_id": 1,
-      "score": 1
     }
 }'
 
