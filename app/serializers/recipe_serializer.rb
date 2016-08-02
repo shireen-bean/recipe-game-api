@@ -1,5 +1,5 @@
 class RecipeSerializer < ActiveModel::Serializer
-  attributes :id, :title, :directions, :time, :image, :ingredients, :level, :tags, :ratings, :profiles
+  attributes :id, :title, :directions, :time, :image, :ingredients, :level, :tags, :profiles
 
 
 def schedules
