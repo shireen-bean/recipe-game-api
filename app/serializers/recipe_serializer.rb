@@ -5,6 +5,10 @@ def favorites
   object.favorites.pluck(:id)
 end
 
+def schedules
+  object.schedules.pluck(:id)
+end
+
 def profiles
   object.profiles.pluck(:id)
 end

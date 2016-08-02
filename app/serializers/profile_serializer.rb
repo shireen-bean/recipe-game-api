@@ -5,6 +5,10 @@ class ProfileSerializer < ActiveModel::Serializer
     object.favorites.pluck(:id)
   end
 
+  def schedules
+    object.schedules.pluck(:id)
+  end
+
   def recipes
     object.recipes.pluck(:id)
   end
