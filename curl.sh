@@ -4,7 +4,7 @@ curl --include --request POST http://localhost:3000/sign-up \
   --header "Content-Type: application/json" \
   --data '{
     "credentials": {
-      "email": "shireen",
+      "email": "jason",
       "password": "p",
       "password_confirmation": "p"
     }
@@ -16,6 +16,17 @@ curl --include --request POST http://localhost:3000/sign-in \
     "credentials": {
       "email": "shireen",
       "password": "p"
+    }
+}'
+
+curl --include --request POST http://localhost:3000/profiles \
+  --header "Content-Type: application/json" \
+  --header "Authorization: Token token=BAhJIiVhMGM0MTBiNjIwMjU1NmJlODEwNjc3MjMzYTA3NmE1NwY6BkVG--4e54c295e1ff19faad3c43a69dbad58817dac90b" \
+  --data '{
+    "profile": {
+      "given_name": "Jason Frishman",
+      "level": 1,
+      "user_id": 2
     }
 }'
 
