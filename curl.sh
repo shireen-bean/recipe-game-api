@@ -4,7 +4,7 @@ curl --include --request POST http://localhost:3000/sign-up \
   --header "Content-Type: application/json" \
   --data '{
     "credentials": {
-      "email": "sunshine",
+      "email": "jason",
       "password": "p",
       "password_confirmation": "p"
     }
@@ -14,14 +14,14 @@ curl --include --request POST http://localhost:3000/sign-in \
   --header "Content-Type: application/json" \
   --data '{
     "credentials": {
-      "email": "marvin",
+      "email": "jason",
       "password": "p"
     }
 }'
 
 curl --include --request POST http://localhost:3000/profiles \
   --header "Content-Type: application/json" \
-  --header "Authorization: Token token=BAhJIiU0MjVkODRiZTQwYjcwODFlN2NlZGRlNTQ1OTNiMGU2NgY6BkVG--66151cfa55afc2b8284caff1bcbfee4bc4d47432" \
+  --header "Authorization: Token token=BAhJIiVjYjcwODExMmM2NjQxNzA4ZmY2MGQ1Yjg1MzVjZTk4YwY6BkVG--496bd0d4db068924b13569f33aad4f92eb8fc3c3" \
   --data '{
     "profile": {
       "given_name": "Shireen Kheradpey",
@@ -32,7 +32,7 @@ curl --include --request POST http://localhost:3000/profiles \
 
 curl --include --request POST http://localhost:3000/profiles \
   --header "Content-Type: application/json" \
-  --header "Authorization: Token token=BAhJIiU1OGU5OWM2YmI2NzRhZTY0ZmI4MjViZjcwODI1NDBjNwY6BkVG--97780a6bceaf8f4079c59877e4e79c9c158dcab0" \
+  --header "Authorization: Token token=BAhJIiUzNWQxYWY1MTlmZDI0NzZhMWU1YWUxOGUwMzlkMDJjNAY6BkVG--d0c89c958d3f861aa19c542e3fd79806f3e1ab06" \
   --data '{
     "profile": {
       "given_name": "Jason",
@@ -58,7 +58,7 @@ curl --include --request POST http://localhost:3000/schedules \
   --data '{
     "schedule": {
       "profile_id": 1,
-      "recipe_id": 6,
+      "recipe_id": 3,
       "eat_on": "2016-08-02",
       "complete": false,
       "favorite": true
