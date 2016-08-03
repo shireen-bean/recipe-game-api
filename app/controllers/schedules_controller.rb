@@ -1,13 +1,19 @@
-class SchedulesController < ApplicationController
+class SchedulesController < ProtectedController
   before_action :set_schedule, only: [:show, :update, :destroy]
 
   # GET /schedules
   # GET /schedules.json
   def index
-    @schedules = Schedule.all
+    @schedules = @current_user.profile.schedules
 
     render json: @schedules
   end
+
+  # def index
+  #   @schedules = Schedule.all
+  #
+  #   render json: @schedules
+  # end
 
   # GET /schedules/1
   # GET /schedules/1.json

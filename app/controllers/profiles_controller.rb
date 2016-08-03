@@ -1,12 +1,11 @@
 class ProfilesController < ProtectedController
   before_action :set_profile, only: [:show, :update, :destroy]
-  # before_action :authenticate, only: [:create, :update]
+  # skip_before_action :authenticate, only: [:index]
 
   # GET /profiles
   # GET /profiles.json
   def index
     @profiles = @current_user.profile
-    # @profile = @profiles.where({ user_id: current_user})
 
     render json: @profiles
   end

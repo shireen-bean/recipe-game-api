@@ -50,6 +50,19 @@ curl --include --request POST http://localhost:3000/recipes \
     }
 }'
 
+curl --include --request POST http://localhost:3000/recipes \
+  --header "Content-Type: application/json" \
+  --data '{
+    "recipe": {
+      "title": "Ramen",
+      "image":"http://www.chowstatic.com/blog-media/2015/09/phpThumb_generated_thumbnail-17.jpeg",
+      "level": 1,
+      "time": 10,
+      "ingredients": ["Noodles", "Soup","Toppings"],
+      "directions": ["Boil Noodles", "Dump noodles into soup", "Top with toppings","Enjoy!"]
+    }
+}'
+
 curl --include --request PATCH http://localhost:3000/recipes/3 \
   --header "Content-Type: application/json" \
   --data '{

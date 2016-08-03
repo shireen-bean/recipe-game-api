@@ -14,25 +14,25 @@ curl --include --request POST http://localhost:3000/sign-in \
   --header "Content-Type: application/json" \
   --data '{
     "credentials": {
-      "email": "jason",
+      "email": "shireen",
       "password": "p"
     }
 }'
 
 curl --include --request POST http://localhost:3000/profiles \
   --header "Content-Type: application/json" \
-  --header "Authorization: Token token=BAhJIiVjYjcwODExMmM2NjQxNzA4ZmY2MGQ1Yjg1MzVjZTk4YwY6BkVG--496bd0d4db068924b13569f33aad4f92eb8fc3c3" \
+  --header "Authorization: Token token=BAhJIiU3M2NkZWQ3Y2M3ZjYwOWM3Y2UwNzE4Y2QwMWU3ZGQ3OQY6BkVG--d66edcdde2d97136ad74156149a03759d975e59a" \
   --data '{
     "profile": {
       "given_name": "Shireen Kheradpey",
-      "level": 1,
+      "level": 2,
       "user_id": 1
     }
 }'
 
 curl --include --request POST http://localhost:3000/profiles \
   --header "Content-Type: application/json" \
-  --header "Authorization: Token token=BAhJIiUzNWQxYWY1MTlmZDI0NzZhMWU1YWUxOGUwMzlkMDJjNAY6BkVG--d0c89c958d3f861aa19c542e3fd79806f3e1ab06" \
+  --header "Authorization: Token token=BAhJIiVmMmFiNGM4NGJhOTVhOGVhYzU5OWM4OWVkYTc1ZGI0OQY6BkVG--f3ae8d3ecc943f311f80cd69c2955759c45b4867" \
   --data '{
     "profile": {
       "given_name": "Jason",
