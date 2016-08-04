@@ -24,6 +24,7 @@ curl --include --request POST http://localhost:3000/recipes \
     }
 }'
 
+
 curl --include --request POST http://localhost:3000/recipes \
   --header "Content-Type: application/json" \
   --data '{
@@ -73,6 +74,32 @@ curl --include --request POST http://localhost:3000/recipes \
       "time": 10,
       "ingredients": ["Salmon", "Asparagus","Molasses"],
       "directions": ["Bake Salmon", "Bake asparagus", "Top with toppings","Enjoy!"]
+    }
+}'
+
+curl --include --request POST http://localhost:3000/recipes \
+  --header "Content-Type: application/json" \
+  --data '{
+    "recipe": {
+      "title": "Roasted Chicken",
+      "image":"http://www.todaysparent.com/wp-content/uploads/2001/09/high-speed-roast-chicken-5383.jpg",
+      "level": 3,
+      "time": 10,
+      "ingredients": ["Chicken", "Spices","Lemon"],
+      "directions": ["Bake Chicken at 350 degrees", "Stuff with lemon", "Let chicken rest"]
+    }
+}'
+
+curl --include --request POST http://localhost:3000/recipes \
+  --header "Content-Type: application/json" \
+  --data '{
+    "recipe": {
+      "title": "Chow Mein",
+      "image":"http://www.pingonrestaurant.co.uk/cs/Satellite?blobcol=urlimagefile&blobheader=image%2Fpng&blobheadername1=Content-Disposition&blobheadervalue1=inline%3B+filename%3Dpingon-edinburgh-formalise-feat01.png&blobkey=id&blobtable=UXImage&blobwhere=1376633383052&ssbinary=true&moddate=2013-08-27%2002:57:13",
+      "level": 4,
+      "time": 25,
+      "ingredients": ["Bean thread noodles", "Soy Sauce","Stir Fry vegetables"],
+      "directions": ["Bake Chicken at 350 degrees", "Stuff with lemon", "Let chicken rest"]
     }
 }'
 
