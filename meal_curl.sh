@@ -63,6 +63,19 @@ curl --include --request POST http://localhost:3000/recipes \
     }
 }'
 
+curl --include --request POST http://localhost:3000/recipes \
+  --header "Content-Type: application/json" \
+  --data '{
+    "recipe": {
+      "title": "Maple Salmon",
+      "image":"http://cdn-maf3.heartyhosting.com/sites/muscleandfitness.com/files/broiled-salmon-recipe_1.jpg",
+      "level": 3,
+      "time": 10,
+      "ingredients": ["Salmon", "Asparagus","Molasses"],
+      "directions": ["Bake Salmon", "Bake asparagus", "Top with toppings","Enjoy!"]
+    }
+}'
+
 curl --include --request PATCH http://localhost:3000/recipes/3 \
   --header "Content-Type: application/json" \
   --data '{
